@@ -82,3 +82,4 @@ zhang jun
 geoffroy.weisenhorn  
 Axel Fagerstedt  
 Andreea Beza
+Jingdong Lu

@@ -83,4 +83,3 @@ geoffroy.weisenhorn
 Axel Fagerstedt  
 Andreea Beza
 Jingdong Lu
-Jingdong Lu 1

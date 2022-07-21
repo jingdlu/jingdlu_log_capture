@@ -9,7 +9,7 @@ on:
     branches: [ master ]
   schedule:
     # Runs at 01:00 UTC (9:00 AM Beijing) every day
-    - cron:  '0 1 * * *'
+    - cron:  '0 22 * * *'
 
 jobs:
   build:
@@ -32,5 +32,5 @@ jobs:
         dst_token:  ${{ secrets.CODING_TOKEN }}
         force_update: true
         account_type: org
-        static_list: "linux-intel-lts2019-chromium,linux-intel-lts2019-yocto,linux-intel-lts,device-androidia-kernel,mainline-tracking,linux-intel-lts2020-yocto"
+        static_list: "linux-intel-lts2019-chromium,linux-intel-lts2019-yocto,linux-intel-lts,device-androidia-kernel,mainline-tracking,linux-intel-lts2020-yocto,linux-intel-lts2020-chromium"
         cache_path: /github/workspace/jingdlu_kernel_mirror-cache

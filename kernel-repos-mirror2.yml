@@ -1,0 +1,36 @@
+name: Kernel repos mirror 2 periodic job
+
+on:
+  push:
+  pull_request:
+    paths:
+    - '.github/workflows/**'
+    # Runs at every pull requests submitted in master branch 
+    branches: [ master ]
+  schedule:
+    # Runs at 01:00 UTC (9:00 AM Beijing) every day
+    - cron:  '0 22 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Cache projectceladon kernel src repos
+      uses: actions/cache@v1
+      with:
+        path: /home/runner/work/jingdlu_kernel_mirror2/jingdlu_kernel_mirror2/jingdlu_kernel_mirror2-cache
+        key: ${{ runner.os }}-jingdlu_kernel_mirror2-repos-cache
+
+    - name: Mirror the Github organization kernel repos 2 to Coding.
+      uses: jingdlu/hub-mirror-action@master
+      with:
+        src: github/projectceladon
+        dst: coding/projectceladon
+        dst_key: ${{ secrets.CODING_PRIVATE_KEY }}
+        dst_token:  ${{ secrets.CODING_TOKEN }}
+        force_update: true
+        account_type: org
+        static_list: "linux-intel-lts2021-chromium,linux-intel-lts2022-chromium"
+        cache_path: /github/workspace/jingdlu_kernel_mirror2-cache

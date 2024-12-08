@@ -18,7 +18,7 @@ jobs:
 
     steps:
     - name: Cache projectceladon src repos
-      uses: actions/cache@v1
+      uses: actions/cache@v3
       with:
         path: /home/runner/work/jingdlu_coding_mirror/jingdlu_coding_mirror/jingdlu_coding_mirror-cache
         key: ${{ runner.os }}-jingdlu_coding_mirror-repos-cache

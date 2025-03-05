@@ -18,7 +18,7 @@ jobs:
 
     steps:
     - name: Cache projectceladon kernel src repos
-      uses: actions/cache@v1
+      uses: actions/cache@v3
       with:
         path: /home/runner/work/jingdlu_kernel_mirror/jingdlu_kernel_mirror/jingdlu_kernel_mirror-cache
         key: ${{ runner.os }}-jingdlu_kernel_mirror-repos-cache
